@@ -1,0 +1,1428 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta http-equiv='cache-control' content='no-cache' />
+  <meta http-equiv='expires' content='0' />
+  <meta http-equiv='pragma' content='no-cache' />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!--Page Specific Metadata-->
+  <title>Simpli Degree </title>
+  <meta name="referrer" content="no-referrer-when-downgrade" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <meta name="robots" content="all" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta property="article:published_time" content="" />
+  <meta property="article:modified_time" content=" " />
+  <link rel="canonical" href="#" />
+
+  <!--Open Graph Metadata-->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="" />
+  <meta property="og:description" content="" />
+  <meta property="og:image" content="" />
+  <meta property="og:site_name" content="" />
+  <meta property="og:url" content="" />
+  <meta property="article:publisher" content="" />
+  <meta property="article:published_time" content="" />
+
+  <!--Twitter Card Metadata-->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="" />
+  <meta name="twitter:title" content="" />
+  <meta name="twitter:description" content="" />
+  <meta name="twitter:image:src" content="https://#" />
+  <meta name="twitter:site" content="@#" />
+  <meta name="twitter:creator" content="@#">
+
+
+
+  <link rel="icon" href="assets/img/favicon.png">
+
+
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+  <link rel="stylesheet" href="assets/css/slick.min.css">
+  <link rel="stylesheet" href="assets/css/odometer.css">
+  <link rel="stylesheet" href="assets/css/animate.css">
+  <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* Add styling for the scrollable container */
+.td_filter_widget_list {
+    max-height: 400px; /* Adjust height as needed */
+    overflow-y: auto;  /* Enables vertical scrolling */
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Custom scrollbar styling */
+.td_filter_widget_list::-webkit-scrollbar {
+    width: 6px; /* Width of the scrollbar */
+}
+
+.td_filter_widget_list::-webkit-scrollbar-thumb {
+    background-color: #888; /* Scrollbar color */
+    border-radius: 5px;
+}
+
+.td_filter_widget_list::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Scrollbar hover effect */
+}
+
+    /* Ensure the product list is displayed in a row */
+    #product-list {
+        display: flex;
+        flex-wrap: wrap; /* Allows wrapping on small screens */
+       
+        justify-content: center; /* Centers products horizontally */
+    }
+
+    .product-card {
+        background: #fff;
+        padding: 15px;
+        width: 420px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        /* transition: 0.3s; */
+    }
+
+    .product-card:hover {
+        /* transform: translateY(-5px); */
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .product-card h3 {
+        margin-bottom: 10px;
+    }
+
+    .product-card p {
+        color: #666;
+        margin-bottom: 15px;
+    }
+
+    .btn {
+        background: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: 0.3s;
+    }
+
+    .btn:hover {
+        background: #0056b3;
+    }
+</style>
+
+  <style>
+
+
+        h2 {
+            margin: 20px;
+            text-align: center;
+        }
+
+     
+
+        .product-card {
+            background: #fff;
+            padding: 15px;
+            width: 320px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            /* transition: 0.3s; */
+        }
+
+        .product-card:hover {
+            /* transform: translateY(-5px); */
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .product-card p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            background: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+        }
+
+        /* Footer Compare Section */
+        /* .compare-footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.1);
+        } */
+
+        .compare-footer p {
+            margin: 5px;
+            font-size: 16px;
+        }
+
+  
+
+        .remove-btn {
+            background: red;
+            padding: 5px;
+            font-size: 12px;
+        } #product-list {
+        display: flex;
+        flex-wrap: wrap;
+       
+        justify-content: center;
+    }
+
+    
+
+    .product-card:hover {
+        /* transform: translateY(-5px); */
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .td_card_info {
+        padding: 10px;
+    }
+
+    /* Compare Section - Display Compared Products Horizontally */
+    .compare-section {
+        position: fixed;
+        bottom: 10px;
+        width: 100%;
+        background: #333;
+        color: white;
+        padding: 15px;
+        text-align: center;
+        box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .compare-items {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap; /* Ensures responsiveness */
+    }
+      .compare-items {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 10px;
+            flex-wrap: wrap;
+        }
+
+    .compare-card {
+        background: #fff;
+        padding: 15px;
+        width: 350px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: 0.3s;
+        position: relative;
+            /* width: 33%; */
+    border: 1px solid var(--white);
+    position: relative;
+    border-radius: 5px;
+    background-color: var(--white);
+    /* height: 10px; */
+    /* text-align: center; */
+    font-size: 14px;
+    }
+        
+
+        .compare-card {
+            background: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            min-width: 60px;
+        }
+
+    .compare-card img {
+        width: 110px;
+        border-radius: 8px;
+    }
+
+    .remove-btn {
+        background: red;
+        padding: 5px;
+        font-size: 12px;
+        border: none;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+.compare-card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    margin: 10px;
+    position: relative;
+}
+.compare-card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    margin: 10px;
+    position: relative;
+}
+
+.remove-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#compare-now-btn {
+    display: block;
+    width: 100%;
+    background: blue;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    text-align: center;
+}
+
+#compare-now-btn:hover {
+    background: darkblue;
+}
+
+
+.remove-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.compare-now-btn {
+    display: block;
+    width: 100%;
+    background: blue;
+    color: white;
+    padding: 8px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.compare-now-btn:hover {
+    background: darkblue;
+}
+
+
+ input{
+            background-color:initial;
+    cursor: default;
+    appearance: auto;
+    box-sizing: border-box;
+    margin: 3px 3px 3px 4px;
+    padding: initial;
+    border: initial;
+        }
+        .clg{
+            margin-top: 10px;
+    padding: 10px 20px;
+    overflow-y: scroll;
+    width: 95%;font-family: __Work_Sans_8a48d8, __Work_Sans_Fallback_8a48d8;
+    font-style: normal;
+        }
+
+        .nms{
+        color: var(--black);
+    font-size: 14px;
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    transition: all .3s ease;
+
+        }
+        .nmsh{
+           font-size: 13px;
+    color: var(--dark-blue);
+    font-weight: 700;
+    margin-bottom: auto;
+        }
+        .nmshp{
+            font-size: 10px;
+    color: var(--dark-grey);
+        }
+        .atcm{
+           
+                                            /* border-radius: 0 0 15px 15px; */
+    /* background: #e89e26; */
+    width: 100%;
+    padding: 10px 0;
+    font-size: 14px;
+    font-weight: 700;
+    color:#000;
+    text-align: center;
+    border: 1px solid #e89e26;
+        }
+
+  </style>
+                         <style>
+    /* Product List - Display Products Horizontally */
+   
+
+</style>
+</head>
+
+<body class="td_theme_2">
+
+
+  <header class="td_site_header td_style_1 td_type_2 td_sticky_header td_medium td_heading_color">
+    <div class="td_top_header td_heading_bg td_white_color">
+      <div class="container">
+        <div class="td_top_header_in">
+          <div class="td_top_header_left">
+            <ul class="td_header_contact_list td_mp_0 td_normal">
+              <!-- <li>
+                <img src="assets/img/icons/call.svg" alt="">
+                <span>
+                  Call: <a href="tel:+91 98237 11600">+91 98237 11600</a>
+                </span>
+              </li> -->
+              <li >
+                
+                
+                  <a href="colleges.html" style="font-size: 13px;">Top Universities & Colleges</a>
+                
+              </li>
+              <li>
+                
+                
+                  <a href="online-pg-programmes.html" style="font-size: 13px;">Trending Courses
+
+</a>
+                
+              </li>
+              <li>
+                
+                
+                  <a href="study-abroad.html" style="font-size: 13px;">
+Study Abroad</a>
+                
+              </li>
+              <li>
+                
+                
+                  <a href="exams.html" style="font-size: 13px;">
+Entrance Exams
+
+</a>
+
+                
+              </li>
+                   <li>
+                
+                
+                  <a href="webstories.html" style="font-size: 13px;">
+Web Stories
+
+</a>
+
+                
+              </li>
+
+            </ul>
+          </div>
+          <div class="td_top_header_right">
+            <span>
+              <a href="https://onlinemba.simplidegree.com/" class="">Login</a>/
+              <a href="https://onlinemba.simplidegree.com/" class="">Register</a>
+            </span>
+            <a href="https://onlinemba.simplidegree.com/" class="td_btn td_style_1 td_medium">
+              <span class="td_btn_in td_white_color td_accent_bg">
+                <span>Apply Now</span>
+                <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15.1575 4.34302L3.84375 15.6567" stroke="currentColor" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M15.157 11.4142C15.157 11.4142 16.0887 5.2748 15.157 4.34311C14.2253 3.41142 8.08594 4.34314 8.08594 4.34314"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="td_main_header">
+      <div class="container">
+        <div class="td_main_header_in">
+          <div class="td_main_header_left">
+            <a class="td_site_branding" href="index.html">
+              <img src="assets/img/Simplidegree logo 10 years 1.png" alt="Logo">
+              <!-- <span  style="color:#000;">10 </span> years -->
+            </a>
+            <div class="td_header_category_wrap position-relative">
+              <button class="td_header_dropdown_btn td_medium td_heading_color">
+                <img src="assets/img/icons/menu-square.svg" alt="" class="td_header_dropdown_btn_icon">
+                <span>Explore Courses</span>
+                <span class="td_header_dropdown_btn_tobble_icon td_center">
+                  <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 4.99997C9 4.99997 6.05404 1.00001 4.99997 1C3.94589 0.999991 1 5 1 5"
+                      stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+              </button>
+              <ul class="td_header_dropdown_list td_mp_0">
+
+
+
+                <li> <a href="online-pg-programmes.html"> Online PG Programmes </a> </li>
+                <li> <a href="online-ug-programmes.html"> Online UG Programmes </a> </li>
+                <li> <a href="diploma-Courses.html"> Diploma Courses </a> </li>
+                <li> <a href="executive-programmes.html"> Executive Programmes </a> </li>
+                <li> <a href="international-programmes.html"> International Programmes </a> </li>
+                <li> <a href="free-courses.html"> Free Courses </a> </li>
+              </ul>
+            </div>
+          </div>
+          <div class="td_main_header_right">
+            <nav class="td_nav">
+              <div class="td_nav_list_wrap">
+                <div class="td_nav_list_wrap_in">
+                  <ul class="td_nav_list">
+                    <li class="menu-item-has-children">
+                      <a href="colleges.html">Top University</a>
+                      <ul>
+                        <li><a href="colleges.html">Maharashtra</a></li>
+                        <li><a href="colleges.html">New Delhi</a></li>
+                        <li><a href="colleges.html">Karnataka</a></li>
+                        <li><a href="colleges.html">Telangana</a></li>
+                        <li><a href="colleges.html">Gujarat</a></li>
+                        <li><a href="colleges.html">Punjab</a></li>
+                        <li><a href="colleges.html">Uttar Pradesh</a></li>
+                        <li><a href="colleges.html">Rajasthan</a></li>
+                        <li><a href="colleges.html">Haryana</a></li>
+                        <li><a href="colleges.html">Tamil Nadu</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                       <a href="Pick-Your-Level-Of-Education.html">College Finder <span href="#" class="aibased">AI Based</span> </a> 
+
+                    </li>
+                    <li><a href="freecounseling.html"><span  class="videoicon"><i class="fa-regular fa-video"></i>  Free Counselling </span></a></li>
+                    <!-- <li><a href="careers.html">Careers</a></li> -->
+
+                    <!-- <li>
+                      <a href="#">Blogs</a>
+
+                    </li> -->
+                    <li><a href="contact-us.html">Contact</a></li>
+                    <!-- <li><a href="contact-us.html"><img class="referal" src="assets/img/referal.png"> </a></li> -->
+
+                  </ul>
+                </div>
+              </div>
+            </nav>
+            <div class="td_hero_icon_btns position-relative">
+              <div class="position-relative">
+                <button class="td_circle_btn td_center td_search_tobble_btn" type="button">
+                  <img src="assets/img/icons/search_2.svg" alt="">
+                </button>
+                <div class="td_header_search_wrap">
+                  <form action="#" class="td_header_search">
+                    <input type="text" class="td_header_search_input" placeholder="Search For Anything">
+                    <button class="td_header_search_btn td_center">
+                      <img src="assets/img/icons/search_2.svg" alt="">
+                    </button>
+                  </form>
+                </div>
+
+                
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+
+        <div class="td_form_card td_style_1 td_radius_10 td_gray_bg_5">
+          <div class="td_form_card_in">
+            <h3>Struggling with Career Growth?</h3>
+            <h2 class=" td_mb_20">Get Free Career Consultation
+            </h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+            <input type="text" class="td_form_field td_mb_30 td_medium td_white_bg" placeholder=" Name *">
+            <input type="text" class="td_form_field td_mb_30 td_medium td_white_bg" placeholder="Email *">
+            <input type="text" class="td_form_field td_mb_30 td_medium td_white_bg" placeholder="Phone *">
+
+
+
+
+            <select class="td_form_field td_mb_30 td_medium td_white_bg" id="program" name="program">
+              <option value="Choose a program*">Choose a program*</option>
+              <option value="online_mba">Online MBA</option>
+              <option value="executive_mba">Executive MBA</option>
+              <option value="online_mca">Online MCA</option>
+              <option value="online_msc">Online MSC</option>
+              <option value="online_mcom">Online MCOM</option>
+              <option value="online_ma">Online MA</option>
+              <option value="online_pgdm">Online PGDM</option>
+              <option value="distance_med">Distance MEd</option>
+              <option value="pg_diploma">PG Diploma</option>
+              <option value="online_bba">Online BBA</option>
+              <option value="online_bca">Online BCA</option>
+              <option value="online_bsc">Online BSC</option>
+              <option value="online_bcom">Online BCom</option>
+              <option value="online_ba">Online BA</option>
+              <option value="distance_bed">Distance BEd</option>
+              <option value="it_certifications">IT Certifications</option>
+              <option value="help_me_decide">Help Me Decide</option>
+            </select>
+
+            <select class="td_form_field td_mb_30 td_medium td_white_bg" name="cars" id="cars">
+              <option value="States/Province*">States/Province*</option>
+              <option value="andhra_pradesh">Andhra Pradesh</option>
+              <option value="arunachal_pradesh">Arunachal Pradesh</option>
+              <option value="assam">Assam</option>
+              <option value="bihar">Bihar</option>
+              <option value="chhattisgarh">Chhattisgarh</option>
+              <option value="goa">Goa</option>
+              <option value="gujarat">Gujarat</option>
+              <option value="haryana">Haryana</option>
+              <option value="himachal_pradesh">Himachal Pradesh</option>
+              <option value="jharkhand">Jharkhand</option>
+              <option value="karnataka">Karnataka</option>
+              <option value="kerala">Kerala</option>
+              <option value="madhya_pradesh">Madhya Pradesh</option>
+              <option value="maharashtra">Maharashtra</option>
+              <option value="manipur">Manipur</option>
+              <option value="meghalaya">Meghalaya</option>
+              <option value="mizoram">Mizoram</option>
+              <option value="nagaland">Nagaland</option>
+              <option value="odisha">Odisha</option>
+              <option value="punjab">Punjab</option>
+              <option value="rajasthan">Rajasthan</option>
+              <option value="sikkim">Sikkim</option>
+              <option value="tamil_nadu">Tamil Nadu</option>
+              <option value="telangana">Telangana</option>
+              <option value="tripura">Tripura</option>
+              <option value="uttar_pradesh">Uttar Pradesh</option>
+              <option value="uttarakhand">Uttarakhand</option>
+              <option value="west_bengal">West Bengal</option>
+              <option value="andaman_and_nicobar_islands">Andaman and Nicobar Islands</option>
+              <option value="chandigarh">Chandigarh</option>
+              <option value="dadra_and_nagar_haveli_and_daman_and_diu">Dadra and Nagar Haveli and Daman and Diu</option>
+              <option value="lakshadweep">Lakshadweep</option>
+              <option value="delhi">Delhi</option>
+              <option value="puducherry">Puducherry</option>
+            </select>
+
+            <div class="td_form_card_bottom td_mb_15 mt-3">
+              <button type="submit" class="td_btn td_style_1 td_radius_10 td_medium">
+                <span class="td_btn_in td_white_color td_accent_bg">
+                  <span>Submit</span>
+                </span>
+              </button>
+
+            </div>
+            <p class="td_form_card_text td_fs_20 td_medium td_heading_color mb-0">Your personal information is secure
+              with us</a></p>
+          </div>
+        </div>
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="sticks-icon">
+    <a href="https://wa.me/+919823711600?text=I'm%20interested%20in%20Simpli%20Degree.%20Please%20Share%20me%20more%20details."
+      class="Youtube" target="_blank">
+      <i class="fab  fa-whatsapp"></i>
+    </a>
+
+  </div>
+
+
+
+
+
+ 
+
+
+
+ 
+
+
+
+    <!-- Start Courses Grid View -->
+    <section>
+        <div class="td_height_120 td_height_lg_80"></div>
+        <div class="container">
+            <div class="row td_gap_y_50 td_row_reverse_lg">
+
+                <div class="col-lg-3">
+                    <div class="td_sidebar_filter">
+                        <div class="td_filter_widget">
+                            <form action="#" class="td_sidebar_search">
+                                <input type="text" placeholder="Keywords" class="td_sidebar_search_input">
+                                <button type="submit" class="td_sidebar_search_btn td_center">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </button>
+                            </form>
+                        </div>
+
+
+                        <div class="td_filter_widget">
+                            <h3 class="td_filter_widget_title td_fs_20 td_mb_16">Study Mode</h3>
+                            <ul class="td_filter_widget_list td_mp_0">
+                                <li>
+                                    <div class="td_custom_checkbox_2">
+                                        <input type="checkbox">
+                                        <span>Online Programmes</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="td_custom_checkbox_2">
+                                        <input type="checkbox">
+                                        <span>Online / Distance Programmes</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="td_custom_checkbox_2">
+                                        <input type="checkbox">
+                                        <span>Distance Programmes</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="td_custom_checkbox_2">
+                                        <input type="checkbox">
+                                        <span>Executive Programmes</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="td_filter_widget">
+                            <h3 class="td_filter_widget_title td_fs_20 td_mb_16">Degree (online / distance)</h3>
+                            <ul class="td_filter_widget_list td_mp_0">
+                                <li>
+                                    <div class="td_custom_checkbox_2">
+                                        <input type="checkbox">
+                                        <span for="mba">MBA</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="td_custom_checkbox_2">
+                                        <input type="checkbox">
+                                        <span for="pgdm">PGDM</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="td_custom_checkbox_2">
+                                        <input type="checkbox" id="mcom">
+                                        <span for="mcom">M.Com</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="td_custom_checkbox_2">
+                                        <input type="checkbox" id="phd">
+                                        <span for="phd">Ph.D</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="td_custom_checkbox_2">
+                                        <input type="checkbox" id="diploma">
+                                        <span for="diploma">Diploma</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="td_custom_checkbox_2">
+                                        <input type="checkbox" id="msc">
+                                        <span for="msc">M.Sc</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="td_custom_checkbox_2">
+                                        <input type="checkbox" id="ma">
+                                        <span for="ma">M.A.</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="td_custom_checkbox_2">
+                                        <input type="checkbox" id="mca">
+                                        <span for="mca">M.C.A.</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="td_custom_checkbox_2">
+                                        <input type="checkbox" id="bsc">
+                                        <span for="bsc">B.Sc</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="td_custom_checkbox_2">
+                                        <input type="checkbox" id="bba">
+                                        <span for="bba">BBA</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="td_custom_checkbox_2">
+                                        <input type="checkbox" id="bca">
+                                        <span for="bca">BCA</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="td_custom_checkbox_2">
+                                        <input type="checkbox" id="ba">
+                                        <span for="ba">BA</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="td_custom_checkbox_2">
+                                        <input type="checkbox" id="bcom">
+                                        <span for="bcom">B.Com</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="td_custom_checkbox_2">
+                                        <input type="checkbox" id="mlis">
+                                        <span for="mlis">MLIS</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="td_custom_checkbox_2">
+                                        <input type="checkbox" id="blis">
+                                        <span for="blis">BLIS</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="td_custom_checkbox_2">
+                                        <input type="checkbox" id="postgraduate-diploma">
+                                        <span for="postgraduate-diploma">Postgraduate Diploma</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="td_custom_checkbox_2">
+                                        <input type="checkbox" id="executive-mba">
+                                        <span for="executive-mba">Executive MBA</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                     
+
+
+
+                    </div>
+                </div>
+                <div class="col-lg-9">
+
+                    <div class="collegeleft">
+
+
+                        <div class="td_section_head_2">
+                            <div class="td_section_head_2_left">
+                                <div class="td_view_btns">
+                                    <a href="courses-grid-view.html" class="td_view_btn td_center active">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M1.99902 18.0016C1.99902 16.4611 1.99902 15.6909 2.34575 15.1251C2.53977 14.8085 2.80596 14.5423 3.12256 14.3483C3.68837 14.0016 4.45859 14.0016 5.99902 14.0016C7.53946 14.0016 8.30968 14.0016 8.87549 14.3483C9.19209 14.5423 9.45828 14.8085 9.65229 15.1251C9.99902 15.6909 9.99902 16.4611 9.99902 18.0016C9.99902 19.542 9.99902 20.3122 9.65229 20.8781C9.45828 21.1947 9.19209 21.4608 8.87549 21.6549C8.30968 22.0016 7.53946 22.0016 5.99902 22.0016C4.45859 22.0016 3.68837 22.0016 3.12256 21.6549C2.80596 21.4608 2.53977 21.1947 2.34575 20.8781C1.99902 20.3122 1.99902 19.542 1.99902 18.0016Z"
+                                                stroke="currentColor" stroke-width="1.5" />
+                                            <path
+                                                d="M13.999 18.0016C13.999 16.4611 13.999 15.6909 14.3458 15.1251C14.5398 14.8085 14.806 14.5423 15.1226 14.3483C15.6884 14.0016 16.4586 14.0016 17.999 14.0016C19.5395 14.0016 20.3097 14.0016 20.8755 14.3483C21.1921 14.5423 21.4583 14.8085 21.6523 15.1251C21.999 15.6909 21.999 16.4611 21.999 18.0016C21.999 19.542 21.999 20.3122 21.6523 20.8781C21.4583 21.1947 21.1921 21.4608 20.8755 21.6549C20.3097 22.0016 19.5395 22.0016 17.999 22.0016C16.4586 22.0016 15.6884 22.0016 15.1226 21.6549C14.806 21.4608 14.5398 21.1947 14.3458 20.8781C13.999 20.3122 13.999 19.542 13.999 18.0016Z"
+                                                stroke="currentColor" stroke-width="1.5" />
+                                            <path
+                                                d="M1.99902 6.00159C1.99902 4.46115 1.99902 3.69093 2.34575 3.12512C2.53977 2.80852 2.80596 2.54233 3.12256 2.34832C3.68837 2.00159 4.45859 2.00159 5.99902 2.00159C7.53946 2.00159 8.30968 2.00159 8.87549 2.34832C9.19209 2.54233 9.45828 2.80852 9.65229 3.12512C9.99902 3.69093 9.99902 4.46115 9.99902 6.00159C9.99902 7.54202 9.99902 8.31224 9.65229 8.87805C9.45828 9.19465 9.19209 9.46084 8.87549 9.65486C8.30968 10.0016 7.53946 10.0016 5.99902 10.0016C4.45859 10.0016 3.68837 10.0016 3.12256 9.65486C2.80596 9.46084 2.53977 9.19465 2.34575 8.87805C1.99902 8.31224 1.99902 7.54202 1.99902 6.00159Z"
+                                                stroke="currentColor" stroke-width="1.5" />
+                                            <path
+                                                d="M13.999 6.00159C13.999 4.46115 13.999 3.69093 14.3458 3.12512C14.5398 2.80852 14.806 2.54233 15.1226 2.34832C15.6884 2.00159 16.4586 2.00159 17.999 2.00159C19.5395 2.00159 20.3097 2.00159 20.8755 2.34832C21.1921 2.54233 21.4583 2.80852 21.6523 3.12512C21.999 3.69093 21.999 4.46115 21.999 6.00159C21.999 7.54202 21.999 8.31224 21.6523 8.87805C21.4583 9.19465 21.1921 9.46084 20.8755 9.65486C20.3097 10.0016 19.5395 10.0016 17.999 10.0016C16.4586 10.0016 15.6884 10.0016 15.1226 9.65486C14.806 9.46084 14.5398 9.19465 14.3458 8.87805C13.999 8.31224 13.999 7.54202 13.999 6.00159Z"
+                                                stroke="currentColor" stroke-width="1.5" />
+                                        </svg>
+                                    </a>
+                                    <a href="courses-list-view.html" class="td_view_btn td_center">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M22.5 4.5V8.25C22.5 9.90454 21.1545 11.25 19.5 11.25H15.75C14.0955 11.25 12.75 9.90454 12.75 8.25V4.5C12.75 2.84546 14.0955 1.5 15.75 1.5H19.5C21.1545 1.5 22.5 2.84546 22.5 4.5ZM8.25 12.75H4.5C2.84546 12.75 1.5 14.0955 1.5 15.75V19.5C1.5 21.1545 2.84546 22.5 4.5 22.5H8.25C9.90454 22.5 11.25 21.1545 11.25 19.5V15.75C11.25 14.0955 9.90454 12.75 8.25 12.75ZM21.75 19.5H13.5C13.0854 19.5 12.75 19.8354 12.75 20.25C12.75 20.6646 13.0854 21 13.5 21H21.75C22.1646 21 22.5 20.6646 22.5 20.25C22.5 19.8354 22.1646 19.5 21.75 19.5ZM8.25 1.5H4.5C2.84546 1.5 1.5 2.84546 1.5 4.5V8.25C1.5 9.90454 2.84546 11.25 4.5 11.25H8.25C9.90454 11.25 11.25 9.90454 11.25 8.25V4.5C11.25 2.84546 9.90454 1.5 8.25 1.5ZM21.75 16.5H13.5C13.0854 16.5 12.75 16.8354 12.75 17.25C12.75 17.6646 13.0854 18 13.5 18H21.75C22.1646 18 22.5 17.6646 22.5 17.25C22.5 16.8354 22.1646 16.5 21.75 16.5ZM21.75 13.5H13.5C13.0854 13.5 12.75 13.8354 12.75 14.25C12.75 14.6646 13.0854 15 13.5 15H21.75C22.1646 15 22.5 14.6646 22.5 14.25C22.5 13.8354 22.1646 13.5 21.75 13.5Z"
+                                                fill="currentColor" />
+                                        </svg>
+                                    </a>
+                                </div>
+                                <span class=" td_heading_color td_medium">Showing 14 Colleges Of 50</span>
+                            </div>
+                            <div class="td_section_head_2_right">
+                                <div class="td_section_head_select td_fs_20">
+                                    <b class="td_semibold td_heading_color">Sort By: </b>
+                                    <select class="td_form_field td_medium">
+                                        <option value="0">Featured</option>
+                                        <option value="1">Popular</option>
+                                        <option value="2">New</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="td_height_60 td_height_lg_40"></div>
+
+
+<div class="row td_gap_y_30 td_row_gap_30">
+    <div id="product-list">
+        <!-- PRODUCT CARD -->
+          <div class="col-lg-4 product-card" data-id="1" data-name="Amity University" data-price="₹55000">
+                                <div class="td_card td_style_3 d-block td_radius_10">
+                                    <span class="td_card_label td_accent_bg td_white_color"><img
+                                            src="assets/img/universities/nmis.jpg"> </span>
+                                    <a href="amity-university.html" class="td_card_thumb">
+                                        <img src="assets/img/colleges/nmims.jpeg" alt="">
+                                    </a>
+                                    <div class="">
+                                        <div class="td_card_info_in">
+
+                                            <p class="nms"><a
+                                                    href="" >NMIMS</a></p>
+                                            <a href="amity-university.html"
+                                                class="nmsh" ><span>Starting
+                                                    Fee : ₹55000*</span></a>
+                                            <p  class="nmshp"
+>UGC-DEB ,AICTE ,NAAC</p>
+
+
+
+                                            <div class="atcm" >
+                                              
+                                                        <span onclick="addToCompare(1, 'Amity University', 'NIRF Rank: 62 (Overall)', 'assets/img/colleges/amity.jpg')">Add to compare</span>
+                                                  
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+   
+       
+       
+        <div class="product-card col-lg-4 col-md-6" data-id="2" data-name="Amity " data-price="₹5500">
+       
+            <div class="td_card_info td_white_bg">
+                <div class="td_card_info_in">
+            
+
+        
+
+                    <div class="td_card_btn">
+                        <button class="btn btn-primary" onclick="addToCompare(2, 'Amity ', 'NIRF Rank: 62 (Overall)', 'assets/img/colleges/amity.jpg')">Compare</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ADD MORE PRODUCTS HERE -->
+    </div>
+</div>
+
+
+
+
+
+                        <div class="td_height_60 td_height_lg_40"></div>
+                        
+
+
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+        <div class="td_height_120 td_height_lg_80"></div>
+        <section>
+
+        <div class="container-fluid">
+            <div class="row td_gap_y_50 td_row_reverse_lg">
+               <div class="col-lg-12">
+
+                    <div class="collegeleft">
+
+  <div class="td_height_50 td_height_lg_40"></div>
+
+
+
+
+    </div>
+    </div>
+    </div>
+    </div>
+    
+</section>
+    </section>
+    <!-- End Courses Grid View -->
+
+<!-- Sticky Compare Footer -->
+<div id="compare-section" class="compare-section" style="background-color: rgb(14, 39, 57);">
+    <p>Select University(s) to Compare </p>
+    <div id="compare-items" class="compare-items">
+  
+    </div>
+    <div class="col-2 text-center offset-lg-5" >
+    <button  id="compare-now-btn" style="display: none; background:#e89e26 ; color: white; padding: 10px; border: none; cursor: pointer; margin-top: 10px;" onclick="redirectToCompare()">
+        Compare Now
+    </button>
+    </div>
+</div>
+    <footer class="td_footer td_style_1">
+    <div class="container">
+      <div class="td_footer_row">
+        <div class="td_footer_col">
+          <div class="td_footer_widget">
+            <div class="td_footer_text_widget td_fs_16">
+              <img src="assets/img/foot-logo.png">
+              <p style="color: #fff;
+    line-height: 150%;
+    font-size: 14px;
+    margin-bottom: 30px;">SimpliDegree is an innovative online learning platform that provides industry-relevant certification
+                and degree programs in collaboration with top universities and institutions. 
+              </p>
+              <p style="color: #fff;
+    line-height: 150%;
+    font-size: 14px;
+    margin-bottom: 30px;"> It aims to bridge the gap
+                between academic learning and industry requirements by offering flexible, skill-based courses designed
+                for career advancement.
+
+              </p>
+              <p style="color: #fff;
+    line-height: 150%;
+    font-size: 14px;
+    margin-bottom: 30px;">SimpliDegree focuses on providing learners with practical knowledge, real-world projects,
+                and networking opportunities to enhance employability in a competitive job market.</p>
+            </div>
+            <ul class="td_footer_address_widget td_medium td_mp_0">
+              <li><i class="fa-solid fa-phone-volume"></i><a href="cal:+91 98237 11600">+91 98237 11600</a></li>
+              <li><i class="fa-solid fa-envelope"></i><a href="cal:+91 98237 11600">info@simplidegree.com</a></li>
+              <!-- <li><i class="fa-solid fa-location-dot"></i>Pune, Maharashtra, India</li> -->
+            </ul>
+          </div>
+        </div>
+        <div class="td_footer_col">
+          <div class="td_footer_widget">
+            <h2 class="td_footer_widget_title td_fs_32 td_white_color td_medium td_mb_30">Top Universities
+            </h2>
+            <ul class="td_footer_widget_menu">
+              <li><a href="">Amity University</a></li>
+              <li><a href="">Chandigarh University</a></li>
+              <li><a href="">DY Patil University</a></li>
+              <li><a href="">IMT CDL</a></li>
+              <li><a href="">ICFAI CDOE</a></li>
+              <li><a href="">Jain University</a></li>
+              <li><a href="">Manipal Online</a></li>
+              <li><a href="">UPES University</a></li>
+              <li><a href="">OP Jindal University</a></li>
+              <li><a href="">Chitkara University</a></li>
+              <li><a href="">LPU Online</a></li>
+              <li><a href="">IIM Ahmedabad</a></li>
+              <li><a href="">IIM Raipur</a></li>
+              <li><a href="">Uttaranchal University</a></li>
+            </ul>
+
+          </div>
+        </div>
+        <div class="td_footer_col">
+          <div class="td_footer_widget">
+            <h2 class="td_footer_widget_title td_fs_32 td_white_color td_medium td_mb_30">Online UG Programs</h2>
+
+            <ul class="td_footer_widget_menu">
+              <li><a href="">Online BBA</a></li>
+              <li><a href="">Online BCA</a></li>
+              <li><a href="">Online BCom</a></li>
+              <li><a href="">Online BA</a></li>
+              <li><a href="">Distance BBA</a></li>
+              <li><a href="">Distance BCA</a></li>
+              <li><a href="">Distance BCom</a></li>
+              <li><a href="">Distance BSC</a></li>
+              <li><a href="">Distance BA</a></li>
+              <li><a href="">Distance BLIS</a></li>
+              <li><a href="">Distance B.Ed</a></li>
+              <li><a href="">B.Tech for Working Professionals</a></li>
+              <li><a href="">B.Tech after Diploma</a></li>
+
+
+            </ul>
+          </div>
+        </div>
+
+
+        <div class="td_footer_col">
+          <div class="td_footer_widget">
+            <h2 class="td_footer_widget_title td_fs_32 td_white_color td_medium td_mb_30">Top PG Courses</h2>
+
+            <ul class="td_footer_widget_menu">
+              <li><a href="">Online MBA</a></li>
+              <li><a href="">Online MCA</a></li>
+              <li><a href="">Online MCom</a></li>
+              <li><a href="">Online MCom with ACCA</a></li>
+              <li><a href="">Online MSc</a></li>
+              <li><a href="">Online MA</a></li>
+              <li><a href="">Distance MBA</a></li>
+              <li><a href="">Distance MCA</a></li>
+              <li><a href="">Distance MCom</a></li>
+              <li><a href="">Distance MLIS</a></li>
+            </ul>
+
+          </div>
+        </div>
+
+        <div class="td_footer_col">
+          <div class="td_footer_widget">
+            <h2 class="td_footer_widget_title td_fs_32 td_white_color td_medium td_mb_30">Online Executive Courses
+            </h2>
+
+            <ul class="td_footer_widget_menu">
+              <li><a href="">Online MBA</a></li>
+              <li><a href="">Online MCA</a></li>
+              <li><a href="">Online MCom</a></li>
+              <li><a href="">Online MCom with ACCA</a></li>
+              <li><a href="">Online MSc</a></li>
+              <li><a href="">Online MA</a></li>
+              <li><a href="">Distance MBA</a></li>
+              <li><a href="">Distance MCA</a></li>
+              <li><a href="">Distance MCom</a></li>
+              <li><a href="">Distance MLIS</a></li>
+            </ul>
+
+          </div>
+        </div>
+
+
+      </div>
+      <div class="td_footer_row">
+
+        <div class="td_footer_col">
+          <div class="td_footer_widget">
+            <h2 class="td_footer_widget_title td_fs_32 td_white_color td_medium td_mb_30">Diploma Courses
+            </h2>
+            <ul class="td_footer_widget_menu">
+              <li><a href="">PGD Finance & Acc</a></li>
+              <li><a href="">PGD Data Science</a></li>
+              <li><a href="">Digital Marketing</a></li>
+              <li><a href="">PGD Retail Management</a></li>
+              <li><a href="">PGD Marketing</a></li>
+              <li><a href="">PGD HR Management</a></li>
+              <li><a href="">Banking & Finance Mgmt</a></li>
+              <li><a href="">International Trade Mgmt</a></li>
+              <li><a href="">Cyber Law</a></li>
+              <li><a href="">PGD IT</a></li>
+            </ul>
+
+
+          </div>
+        </div>
+        <div class="td_footer_col">
+          <div class="td_footer_widget">
+            <h2 class="td_footer_widget_title td_fs_32 td_white_color td_medium td_mb_30">Certification Programs</h2>
+
+            <ul class="td_footer_widget_menu">
+              <li><a href="">Data Analytics</a></li>
+              <li><a href="">Digital Marketing</a></li>
+              <li><a href="">Cyber Security</a></li>
+              <li><a href="">MS Excel</a></li>
+              <li><a href="">AI & ML</a></li>
+              <li><a href="">Marketing</a></li>
+              <li><a href="">Leadership Skills</a></li>
+              <li><a href="">Project Management</a></li>
+              <li><a href="">Supply Chain Management</a></li>
+              <li><a href="">Financial Accounting</a></li>
+            </ul>
+
+          </div>
+        </div>
+
+
+        <div class="td_footer_col">
+          <div class="td_footer_widget">
+            <h2 class="td_footer_widget_title td_fs_32 td_white_color td_medium td_mb_30">Best Online Colleges
+            </h2>
+
+            <ul class="td_footer_widget_menu">
+              <li><a href="">Online MBA Colleges</a></li>
+              <li><a href="">Distance MBA Colleges</a></li>
+              <li><a href="">Executive MBA Colleges</a></li>
+              <li><a href="">Online BCA Colleges</a></li>
+              <li><a href="">Online BA Colleges</a></li>
+              <li><a href="">Online BBA Colleges</a></li>
+              <li><a href="">Online BSc Colleges</a></li>
+            </ul>
+
+
+          </div>
+        </div>
+
+        <div class="td_footer_col">
+          <div class="td_footer_widget">
+            <h2 class="td_footer_widget_title td_fs_32 td_white_color td_medium td_mb_30">Online MBA Specialisations
+            </h2>
+
+            <ul class="td_footer_widget_menu">
+              <li><a href="">Business Management</a></li>
+              <li><a href="">Data Science</a></li>
+              <li><a href="">Entrepreneurship</a></li>
+              <li><a href="">Financial Management</a></li>
+              <li><a href="">Healthcare Management</a></li>
+              <li><a href="">Human Resources Management</a></li>
+              <li><a href="">International Business</a></li>
+              <li><a href="">Marketing</a></li>
+              <li><a href="">Operations Management</a></li>
+              <li><a href="">Retail Management</a></li>
+            </ul>
+
+
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+    <div class="td_footer_bottom td_fs_18">
+      <div class="container">
+        <div class="td_footer_bottom_in">
+          <p class="td_copyright mb-0"> © <a href="index.html"> Simplidegree </a>| All Right Reserved</p>
+          <p class="td_copyright mb-0"> Designed by <a href="https://www.netcom-india.com/"> Netcom Business Solutions
+              Pvt Ltd </a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <div class="td_scrollup">
+    <i class="fa-solid fa-arrow-up"></i>
+  </div>
+
+  <a class="contact-btn1" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <div class="contact-bg">Enquire Now</div>
+  </a>
+
+
+
+  <script>
+   
+    setTimeout(function() {
+         var modalElement = document.getElementById('exampleModal');
+         var modal = new bootstrap.Modal(modalElement);
+         modal.show();
+     }, 7000);
+ </script>
+
+  <!-- End Scroll Up Button -->
+  <!-- Script -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="assets/js/jquery-3.7.1.min.js"></script>
+  <script src="assets/js/jquery.slick.min.js"></script>
+  <script src="assets/js/odometer.js"></script>
+  <script src="assets/js/gsap.min.js"></script>
+  <script src="assets/js/jquery-ui.min.js"></script>
+  <script src="assets/js/wow.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <!-- Modal for YouTube Video -->
+<div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="videoModalLabel">Watch Video</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="ratio ratio-16x9">
+                    <iframe id="youtubeVideo" src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 
+    <script>
+        let comparedProducts = [];
+
+        function addToCompare(id, name, price) {
+            if (comparedProducts.some(product => product.id === id)) {
+                alert("Product already added for comparison!");
+                return;
+            }
+
+            if (comparedProducts.length >= 3) {
+                alert("You can only compare up to 3 products!");
+                return;
+            }
+
+            comparedProducts.push({ id, name, price });
+            renderCompareSection();
+        }
+
+        function removeFromCompare(id) {
+            comparedProducts = comparedProducts.filter(product => product.id !== id);
+            renderCompareSection();
+        }
+
+        function renderCompareSection() {
+            const compareSection = document.getElementById("compare-section");
+
+            if (comparedProducts.length === 0) {
+                compareSection.innerHTML = "<p>No products added for comparison.</p>";
+                return;
+            }
+
+            compareSection.innerHTML = comparedProducts
+                .map(product => `
+                    <div class="product-card">
+                        <h3>${product.name}</h3>
+                        <p>Price: ${product.price}</p>
+                        <button onclick="removeFromCompare(${product.id})">Remove</button>
+                    </div>
+                `)
+                .join("");
+        }
+    </script> -->
+<script>
+    let comparedProducts = [];
+
+    function addToCompare(id, name, price, image) {
+        if (comparedProducts.some(product => product.id === id)) {
+            alert("Product already added for comparison!");
+            return;
+        }
+
+        if (comparedProducts.length >= 3) {
+            alert("You can only compare up to 3 products!");
+            return;
+        }
+
+        comparedProducts.push({ id, name, price, image });
+        renderCompareSection();
+    }
+
+    function removeFromCompare(id) {
+        comparedProducts = comparedProducts.filter(product => product.id !== id);
+        renderCompareSection();
+    }
+
+    function renderCompareSection() {
+        const compareSection = document.getElementById("compare-section");
+        const compareItems = document.getElementById("compare-items");
+        const compareNowBtn = document.getElementById("compare-now-btn");
+
+        if (comparedProducts.length === 0) {
+            compareSection.style.display = "none"; // Hide if no products
+            return;
+        } else {
+            compareSection.style.display = "block"; // Show if products exist
+        }
+
+        compareItems.innerHTML = comparedProducts
+            .map(product => `
+                <div class="compare-card">
+                    <button class="remove-btn" onclick="removeFromCompare(${product.id})">✖</button>
+                    <img src="${product.image}" alt="${product.name}">
+                    <p style="color:#000;">${product.name}</p>
+                    <p style="color:#000;">${product.price}</p>
+                    
+                </div>
+            `)
+            .join("");
+
+        // Show Compare Now button if products are added
+        compareNowBtn.style.display = comparedProducts.length > 0 ? "block" : "none";
+    }
+
+    function redirectToCompare() {
+        if (comparedProducts.length > 0) {
+            localStorage.setItem("comparedProducts", JSON.stringify(comparedProducts));
+            window.location.href = "add-to-compare.html";
+        } else {
+            alert("Please select at least one product to compare.");
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const compareSection = document.getElementById("compare-section");
+        compareSection.style.display = "none"; // Initially hide
+    });
+</script>
+
+
+
+
+
+
+</body>
+
+
+</html>
